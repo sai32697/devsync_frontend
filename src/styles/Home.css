@@ -1,0 +1,28 @@
+.home-container {
+    text-align: center;
+    padding: 50px;
+    background: #f9f9f9;
+    /* Restored original background */
+    color: #333;
+    /* Restored original text color */
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    background: none;
+    /* Restored original background */
+}
+
+.feature-box {
+    background: #f4f4f4;
+    /* Restored original background */
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    color: #222;
+    /* Restored original text color */
+}

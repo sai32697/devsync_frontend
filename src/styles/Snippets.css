@@ -1,0 +1,77 @@
+.snippet-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    /* Restored original background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #222;
+    /* Restored original text color */
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    /* Restored original text color */
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    /* Restored original border color */
+    border-radius: 5px;
+    font-size: 16px;
+    background: #ffffff;
+    /* Restored original background */
+    color: #222;
+    /* Restored original text color */
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    background: #3498db;
+    /* Restored original background */
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+    /* Restored original hover color */
+}
+
+.snippet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    /* Restored original background */
+    border-radius: 8px;
+    margin-top: 20px;
+    color: #222;
+    /* Restored original text color */
+}
+
+.snippet-form input,
+.snippet-form select,
+.snippet-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    /* Restored original border color */
+    border-radius: 5px;
+    font-size: 16px;
+    background: #ffffff;
+    /* Restored original background */
+    color: #222;
+    /* Restored original text color */
+}

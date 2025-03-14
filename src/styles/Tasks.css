@@ -1,0 +1,216 @@
+/* 🔹 Task Container */
+.task-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    /* Restored original background */
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    /* Restored original text color */
+}
+
+/* 🔹 Task Form */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f8f9fa;
+    /* Restored original background */
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    color: #222;
+    /* Restored original text color */
+}
+
+/* 🔹 Input Fields */
+.task-form input,
+.task-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    /* Restored original border color */
+    border-radius: 6px;
+    background: #ffffff;
+    /* Restored original background */
+    color: #222;
+    /* Restored original text color */
+    transition: 0.3s ease;
+}
+
+/* 🔹 Description Field with Scroll */
+.task-form textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    /* Restored original border color */
+    border-radius: 6px;
+    background: #ffffff;
+    /* Restored original background */
+    color: #222;
+    /* Restored original text color */
+    overflow-y: auto;
+    resize: none;
+}
+
+/* 🔹 Add Task Button */
+.task-form button {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    /* Restored original background */
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.task-form button:hover {
+    background: linear-gradient(45deg, #0056b3, #004494);
+}
+
+/* 🔹 Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+/* 🔹 Task Item */
+.task-item {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+}
+
+/* 🔹 Task Details */
+.task-item strong {
+    font-size: 18px;
+    color: #222;
+}
+
+/* 🔹 Task Description */
+.task-item .task-desc {
+    max-height: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.task-item .task-desc::after {
+    content: "▼";
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* 🔹 Expand Description */
+.task-item.expanded .task-desc {
+    max-height: none;
+}
+
+.task-item.expanded .task-desc::after {
+    content: "▲";
+}
+
+/* 🔹 Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🔹 Animated Progress Fill */
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    transition: width 0.5s ease-in-out;
+    border-radius: 5px;
+}
+
+/* 🔹 Buttons */
+.btn-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-progress,
+.btn-complete,
+.btn-delete {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+/* 🔹 Progress Button */
+.btn-progress {
+    background: linear-gradient(45deg, #ffc107, #e0a800);
+    color: white;
+}
+
+.btn-progress:hover {
+    background: linear-gradient(45deg, #e0a800, #c69500);
+}
+
+/* 🔹 Complete Button */
+.btn-complete {
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: white;
+}
+
+.btn-complete:hover {
+    background: linear-gradient(45deg, #218838, #1e7e34);
+}
+
+/* 🔹 Delete Button */
+.btn-delete {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    color: white;
+}
+
+.btn-delete:hover {
+    background: linear-gradient(45deg, #c82333, #b21f2d);
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .task-container {
+        width: 90%;
+    }
+
+    .task-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+    }
+}
