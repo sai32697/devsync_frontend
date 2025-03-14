@@ -21,7 +21,7 @@ const Snippets = () => {
     // ✅ Fetch All Snippets (Public)
     const fetchSnippets = async () => {
         try {
-            const res = await axios.get("http://localhost:4000/api/snippets");
+            const res = await axios.get("https://devsync-backend-1.onrender.com/api/snippets");
             setSnippets(res.data);
         } catch (error) {
             console.error("Error fetching snippets:", error);
@@ -37,7 +37,7 @@ const Snippets = () => {
                 return;
             }
 
-            const res = await axios.get("http://localhost:4000/api/snippets/my-snippets", {
+            const res = await axios.get("https://devsync-backend-1.onrender.com/api/snippets/my-snippets", {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -55,14 +55,14 @@ const Snippets = () => {
             if (editingSnippet) {
                 // Update existing snippet
                 await axios.put(
-                    `http://localhost:4000/api/snippets/${editingSnippet._id}`,
+                    `https://devsync-backend-1.onrender.com/api/snippets/${editingSnippet._id}`,
                     { title, category, snippet, language },
                     { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
                 );
             } else {
                 // Create new snippet
                 await axios.post(
-                    "http://localhost:4000/api/snippets",
+                    "https://devsync-backend-1.onrender.com/api/snippets",
                     { title, category, snippet, language },
                     { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
                 );
@@ -92,7 +92,7 @@ const Snippets = () => {
     // ✅ Delete Snippet
     const deleteSnippet = async (id) => {
         try {
-            await axios.delete(`http://localhost:4000/api/snippets/${id}`, {
+            await axios.delete(`https://devsync-backend-1.onrender.com/api/snippets/${id}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             });
             fetchSnippets();
@@ -105,7 +105,7 @@ const Snippets = () => {
     // ✅ Download Snippet
     const downloadSnippet = async (id, title, language) => {
         try {
-            const res = await axios.get(`http://localhost:4000/api/snippets/download/${id}`, {
+            const res = await axios.get(`https://devsync-backend-1.onrender.com/api/snippets/download/${id}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
                 responseType: "blob",
             });
@@ -171,7 +171,7 @@ const Snippets = () => {
                 {snippets.map((s) => (
                     <li key={s._id}>
                         <strong>{s.title}</strong> ({s.language}) - {s.category}
-                        <button onClick={() => window.open(`http://localhost:4000/api/snippets/${s._id}`, "_blank")}>👁 View</button>
+                        <button onClick={() => window.open(`https://devsync-backend-1.onrender.com/api/snippets/${s._id}`, "_blank")}>👁 View</button>
                         <button onClick={() => downloadSnippet(s._id, s.title, s.language)}>⬇ Download</button>
                     </li>
                 ))}

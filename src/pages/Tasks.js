@@ -16,7 +16,7 @@ const Tasks = () => {
 
     const fetchTasks = async () => {
         try {
-            const res = await axios.get("http://localhost:4000/api/tasks", {
+            const res = await axios.get("https://devsync-backend-1.onrender.com/api/tasks", {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             });
             setTasks(res.data);
@@ -29,7 +29,7 @@ const Tasks = () => {
         e.preventDefault();
         try {
             await axios.post(
-                "http://localhost:4000/api/tasks",
+                "https://devsync-backend-1.onrender.com/api/tasks",
                 { title, description, priority, deadline, status },
                 { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
             );
@@ -46,7 +46,7 @@ const Tasks = () => {
 
     const updateTask = async (id, updatedStatus) => {
         try {
-            await axios.put(`http://localhost:4000/api/tasks/${id}`, { status: updatedStatus }, {
+            await axios.put(`https://devsync-backend-1.onrender.com/api/tasks/${id}`, { status: updatedStatus }, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             });
             fetchTasks();
@@ -57,7 +57,7 @@ const Tasks = () => {
 
     const deleteTask = async (id) => {
         try {
-            await axios.delete(`http://localhost:4000/api/tasks/${id}`, {
+            await axios.delete(`https://devsync-backend-1.onrender.com/api/tasks/${id}`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             });
             fetchTasks();

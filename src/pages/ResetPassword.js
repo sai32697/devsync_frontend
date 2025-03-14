@@ -13,7 +13,7 @@ const ResetPassword = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:4000/api/auth/reset-password", { token, newPassword });
+            const res = await axios.post("https://devsync-backend-1.onrender.com/api/auth/reset-password", { token, newPassword });
             setMessage(res.data.message);
             setTimeout(() => navigate("/login"), 2000);
         } catch (error) {

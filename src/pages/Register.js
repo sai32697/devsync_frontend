@@ -35,7 +35,7 @@ const Register = () => {
         }
 
         try {
-            await axios.post("http://localhost:4000/api/auth/register", {
+            await axios.post("https://devsync-backend-1.onrender.com/api/auth/register", {
                 name, email, password, confirmPassword
             });
 

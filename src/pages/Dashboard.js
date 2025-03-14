@@ -10,10 +10,10 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const taskRes = await axios.get("http://localhost:4000/api/tasks", {
+                const taskRes = await axios.get("https://devsync-backend-1.onrender.com/api/tasks", {
                     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
                 });
-                const snippetRes = await axios.get("http://localhost:4000/api/snippets", {
+                const snippetRes = await axios.get("https://devsync-backend-1.onrender.com/api/snippets", {
                     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
                 });
 
